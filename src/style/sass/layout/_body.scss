@@ -1,0 +1,20 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Montserrat";
+    min-height: 100vh;
+    min-width: 380px;
+    font-size: clamp(12px, 3vw, 24px);
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

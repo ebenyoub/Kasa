@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+
+    img {
+        width: clamp(145px, 20vw, 210px);
+        height: clamp(46px, 20vw, 68px);
+        filter: $filter-primary;
+    }
+
+    nav {
+        display: flex;
+        gap: 3rem;
+        font-size: clamp(16px, 1.5vw, 24px);
+        font-weight: 500;
+        a {
+            text-decoration: none;
+            color: black;
+            &.active {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: clamp(111px, 20vw, 223px);
+    overflow: hidden;
+    border-radius: 25px;
+
+    p {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        font-size: clamp(18px, 3vw, 48px);
+    }
+}

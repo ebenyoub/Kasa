@@ -1,0 +1,15 @@
+footer {
+    text-align: center;
+    background-color: black;
+    padding: 6rem;
+
+    img {
+        width: 122px;
+        height: 39px;
+        filter: $filter-white;
+    }
+
+    p {
+        color: white;
+    }
+}

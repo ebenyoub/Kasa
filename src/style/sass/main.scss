@@ -1,0 +1,24 @@
+@import
+    "base/normalize",
+    "base/typography";
+
+@import
+    "utils/functions",
+    "utils/mixins",
+    "utils/variables";
+
+@import
+    "layout/body",
+    "layout/header",
+    "layout/main",
+    "layout/footer",
+    "layout/error",
+    "layout/rental";
+
+@import
+    "components/banner",
+    "components/card",
+    "components/dropdown",
+    "components/slider",
+    "components/rating",
+    "components/tag";
