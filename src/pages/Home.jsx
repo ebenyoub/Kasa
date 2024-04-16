@@ -1,5 +1,5 @@
 import Banner from "../components/Banner";
-import background from "../assets/images/img_banner_1.png"
+import background from "../assets/images/img_banner_1.webp"
 import Card from "../components/Card";
 import { useContext } from "react";
 import { DataContext } from "../utils/context";

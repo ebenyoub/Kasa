@@ -1,5 +1,5 @@
 import { useState } from "react"
-import chevron from "../assets/icons/chevron-up-solid.svg"
+import chevron from "../assets/images/chevron-up-solid.svg"
 import PropTypes from "prop-types"
 
 
@@ -27,7 +27,7 @@ const Slider = ({ rental }) => {
             <div className="img_container">
                 <img src={rental && rental.pictures[currentImage]} alt="cosy" />
             </div>
-             <ul className="circles">
+            <ul className="circles">
                 {rental.pictures.map((_, index) => (
                     <li className={currentImage === index ? "circle active" : "circle"} key={index} ></li>
                 ))}

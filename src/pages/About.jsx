@@ -1,5 +1,5 @@
 import Banner from "../components/Banner";
-import background from "../assets/images/img_banner_2.png"
+import background from "../assets/images/img_banner_2.webp"
 import Dropdown from "../components/Dropdown";
 import { about } from "../data/object";
 

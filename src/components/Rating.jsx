@@ -1,4 +1,4 @@
-import starSolid from "../assets/icons/star-solid.svg";
+import starSolid from "../assets/images/star-solid.svg";
 import PropTypes from "prop-types"
 
 const Rating = ({ rating }) => {
