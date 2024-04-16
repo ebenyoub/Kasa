@@ -1,8 +1,13 @@
 // Colors
 $primary: #FF6060;
 $primary-accessible: #B40000;
+
+// Filters
 $filter-white: brightness(0) saturate(100%) invert(100%) sepia(6%) saturate(443%) hue-rotate(183deg) brightness(118%) contrast(100%);
 $filter-primary: brightness(0) saturate(100%) invert(56%) sepia(95%) saturate(1765%) hue-rotate(320deg) brightness(100%) contrast(102%);
 $filter-grey: brightness(0) saturate(100%) invert(92%) sepia(0%) saturate(5847%) hue-rotate(207deg) brightness(97%) contrast(97%);
 $filter-primary-accessible: brightness(0) saturate(100%) invert(10%) sepia(96%) saturate(4717%) hue-rotate(4deg) brightness(92%) contrast(118%);
 $filter-grey: brightness(0) saturate(100%) invert(65%) sepia(0%) saturate(6804%) hue-rotate(182deg) brightness(91%) contrast(101%);
+
+// Icons
+$chevron: "../assets/icons/chevron-up-solid.svg"

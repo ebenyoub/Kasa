@@ -1,14 +1,10 @@
 import { useState } from "react";
-import chevron from "../assets/images/chevron-up-solid.svg"
 import styled from "styled-components";
 import PropTypes from "prop-types"
 
 
 const StyledDropdown = styled.div`
     max-width: ${props => props.$width}%;
-    & label::after {
-        background-image: url(${chevron});
-    }
 `
 
 const Dropdown = ({ width, data, id, ul, title }) => {

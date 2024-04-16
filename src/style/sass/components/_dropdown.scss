@@ -44,6 +44,7 @@
 
         &::after {
             content: '';
+            background-image: url($chevron);
             background-size: cover;
             aspect-ratio: 1;
             height: clamp(20px, 5vw, 32px);

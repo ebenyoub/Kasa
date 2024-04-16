@@ -1,5 +1,5 @@
 import { useState } from "react"
-import chevron from "../assets/images/chevron-up-solid.svg"
+import chevron from "../assets/icons/chevron-up-solid.svg"
 import PropTypes from "prop-types"
 
 
