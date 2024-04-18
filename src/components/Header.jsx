@@ -1,5 +1,6 @@
 import logo from "../assets/icons/logo.svg"
 import { NavLink, Link } from "react-router-dom";
+// add robots
 
 const Header = () => {
     return (
