@@ -22,6 +22,10 @@
         &:checked ~ label::after {
             transform: rotate(180deg);
         }
+
+        &:checked ~ label {
+            border-radius: 10px 10px 0 0;
+        }
     }
     
     & label {
@@ -36,6 +40,7 @@
         color: white;
         padding: .5rem 1rem;
         margin: 0;
+        transition: border-radius .4s ease-in-out;
         
         &:hover {
             background-color: darken($primary, 5%);
@@ -57,10 +62,9 @@
         overflow: hidden;
         background-color: #f6f6f6;
         font-size: clamp(14px, 4vw, 18px);
-        border-radius: 5px;
+        border-radius: 0 0 10px 10px;
         max-height: 0;
-        transition: max-height ease-in-out;
-        transition-duration: .4s;
+        transition: max-height .4s ease-in-out;
         
         p {
             margin: 2rem;
