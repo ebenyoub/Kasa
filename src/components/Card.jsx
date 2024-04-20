@@ -44,7 +44,7 @@ const Card = ({ data }) => {
           src={data.cover}
           width="100%"
           height="100%"
-          alt={data.title}
+          alt={`${data.title} - image de couverture`}
           effect="blur"
           placeholderSrc={data.cover}
           loading="lazy"
