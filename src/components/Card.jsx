@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const StyledTitle = styled.p.attrs(props => ({
   style: {
@@ -38,15 +37,12 @@ const Card = ({ data }) => {
       ref={cardRef}
       tabIndex="0"
     >
-        <LazyLoadImage
-          key={data.id}
+        <img
           className="lazy-image"
           src={data.cover}
           width="100%"
           height="100%"
           alt={`${data.title} - image de couverture`}
-          effect="blur"
-          placeholderSrc={data.cover}
           loading="lazy"
         />
         <StyledTitle className="card_title" $size={fontSize}>

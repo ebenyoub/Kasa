@@ -19,7 +19,6 @@
         text-decoration: none;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         cursor: pointer;
-        // box-sizing: border-box;
         transition: transform .2s ease;
 
         &:hover {
@@ -30,12 +29,9 @@
             transform: scale(1);
         }
 
-        & .lazy-load-image-loaded {
+        & .lazy-image {
             position: absolute;
-
-            & .lazy-image {
-                object-fit: cover;
-            }
+            object-fit: cover;
         }
         
         & p {
