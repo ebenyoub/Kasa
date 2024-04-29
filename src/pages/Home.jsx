@@ -5,7 +5,6 @@ import { useContext } from "react";
 import { DataContext } from "../utils/context";
 
 function Home() {
-  console.log("Home => rendering");
   const { datas } = useContext(DataContext)
 
   return (

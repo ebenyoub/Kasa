@@ -1,26 +1,19 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { DataContext } from "../utils/context";
 import Slider from "../components/Slider";
-import styled from "styled-components"
 import Rating from "../components/Rating";
 import Tag from "../components/Tag";
 import Dropdown from "../components/Dropdown";
 
-const StyledLoader = styled.main`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
 const Rentals = () => {
     const { id } = useParams();
-    console.log(`Rental => rendering (${id})`);
     const { datas } = useContext(DataContext);
     const rental = datas && datas.find(data => data.id === id);
 
+    // si l'id n'est pas dans les datas, la condition nous renvoie vers la page Error
     if (!rental) {
-        return <StyledLoader>Loading...</StyledLoader>;
+        return <Navigate to="/error" />
     }
 
     const hostName = rental.host.name.split(" ");

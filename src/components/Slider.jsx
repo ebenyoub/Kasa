@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 const Slider = ({ rental }) => {
     const [currentImage, setCurrentImage] = useState(0)
     const [preloadImages, setPreloadImages] = useState([]);
+    const [pagination, setPagination] = useState(false)
 
     // Créer les images préchargées uniquement lors du premier rendu
     useEffect(() => {
@@ -28,19 +29,28 @@ const Slider = ({ rental }) => {
         const nextIndex = currentImage === 0 ? rental.pictures.length - 1 : currentImage - 1;
         setCurrentImage(nextIndex)
     }
-
     return (
         <div className="slider">
-            <img className="slider__btn slider__btn__left" src={chevron} alt="Bouton précédent" onClick={before} />
-            <img className="slider__btn slider__btn__right" src={chevron} alt="Bouton suivant" onClick={next} />
             <div className="img_container">
                 <img src={preloadImages[currentImage] && preloadImages[currentImage].src} alt={`Image ${currentImage}`} />
             </div>
-            <ul className="circles">
-                {rental.pictures.map((_, index) => (
-                    <li className={currentImage === index ? "circle active" : "circle"} key={index} ></li>
-                ))}
-            </ul>
+            {/* si le nombre d'image est inférieur à 1, on n'affiche pas le controle du slider (fleches + numerotation) */}
+            {rental.pictures.length > 1 && (
+                <>
+                    <img className="slider__btn slider__btn__left" src={chevron} alt="Bouton précédent" onClick={before} />
+                    <img className="slider__btn slider__btn__right" src={chevron} alt="Bouton suivant" onClick={next} />
+                    {/* en cliquant sur la numerotation des images on peut basculer entre chiffres et animation */}
+                    {pagination ?
+                        <ul className="circles" onClick={() => setPagination(!pagination)}>
+                            {rental.pictures.map((_, index) => (
+                                <li className={currentImage === index ? "circle active" : "circle"} key={index} ></li>
+                            ))}
+                        </ul> :
+                        <span className="number-img" onClick={() => setPagination(!pagination)}>{`${currentImage + 1}/${rental.pictures.length}`}</span>
+                    }
+                </>
+            )}
+
         </div>
     );
 }

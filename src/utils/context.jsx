@@ -5,12 +5,10 @@ import PropTypes from "prop-types"
 export const DataContext = createContext({ datas: [] })
 
 export const DataProvider = ({ children }) => {
-    // console.log("DataProvider => rendering");
     const [datas, setDatas] = useState([])
     const [loading, setLoading] = useState(true)
 
     const fetchData = async () => {
-        // console.log("DataProvider => useEffect");
         try {
             const response = await Promise.resolve(dataFile);
             setDatas(response);

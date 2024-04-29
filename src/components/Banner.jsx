@@ -13,10 +13,24 @@ const StyledBanner = styled.div`
     }
 `
 
-const Banner = ({picture, isHeader, darken}) => {
+const BannerText = styled.p`
+    @media (max-width:768px) {
+        span {
+            display: block;
+        }
+    }
+`
+
+const Banner = ({ picture, isHeader, darken }) => {
     return (
         <StyledBanner className="banner" $picture={picture} $darken={darken}>
-            { isHeader && <p>Chez vous, partout et ailleurs</p> }
+            {/* Ajout BannerText pour le mode mobile. Sur deux lignes et aligné à gauche */}
+            {isHeader &&
+                <BannerText>
+                    <span>Chez vous, </span>
+                    <span>partout et ailleurs</span>
+                </BannerText>
+            }
         </StyledBanner>
     );
 }
