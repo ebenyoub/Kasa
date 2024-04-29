@@ -15,7 +15,7 @@ const StyledLoader = styled.main`
 
 const Rentals = () => {
     const { id } = useParams();
-    // console.log(`Rental => rendering (${id})`);
+    console.log(`Rental => rendering (${id})`);
     const { datas } = useContext(DataContext);
     const rental = datas && datas.find(data => data.id === id);
 

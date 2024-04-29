@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Error = () => {
-    // console.log("Error => rendering");
+    console.log("Error => rendering");
     return (
         <main className="error-page">
             <h1>404</h1>

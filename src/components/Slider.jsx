@@ -17,7 +17,7 @@ const Slider = ({ rental }) => {
             setPreloadImages(imagesBuild)
         }
         createImages();
-    }, []);
+    }, [rental]);
 
     const next = () => {
         const nextIndex = currentImage < rental.pictures.length - 1 ? currentImage + 1 : 0;

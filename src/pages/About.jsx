@@ -4,7 +4,7 @@ import Dropdown from "../components/Dropdown";
 import { about } from "../data/object";
 
 const About = () => {
-    // console.log("About => rendering");
+    console.log("About => rendering");
     
     return (
         <main>
