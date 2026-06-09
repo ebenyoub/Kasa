@@ -7,8 +7,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "scss": "sass ./src/style/sass/main.scss:src/style/style.css -w --style compressed",
@@ -24,17 +22,14 @@
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^4.2.1",
-    "@vitejs/plugin-react-swc": "^3.5.0",
+    "@vitejs/plugin-react": "^6.0.2",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "gh-pages": "^6.3.0",
     "postcss": "^8.4.38",
-    "vite": "^5.2.8",
-    "vite-plugin-compression": "^0.5.1"
+    "vite": "^8.0.16"
   },
   "browserslist": "last 4 versions"
 }
