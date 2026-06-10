@@ -7,7 +7,7 @@ const Slider = ({ rental }) => {
     const [preloadImages, setPreloadImages] = useState([]);
 
     useEffect(() => {
-        const imagesBuild = rental.pictures.map((url) => {
+        const imagesBuild = (rental?.pictures ?? []).map((url) => {
             const newImage = new Image()
             newImage.src = url
             return newImage
@@ -15,7 +15,11 @@ const Slider = ({ rental }) => {
 
         setPreloadImages(imagesBuild)
         setCurrentImage(0)
-    }, [rental.pictures]);
+    }, [rental?.pictures]);
+
+    if (!rental?.pictures?.length) {
+        return null;
+    }
 
     const next = () => {
         const nextIndex = currentImage < rental.pictures.length - 1 ? currentImage + 1 : 0;
@@ -36,7 +40,7 @@ const Slider = ({ rental }) => {
                 <img src={chevron} alt="" aria-hidden="true" />
             </button>
             <div className="img_container">
-                <img src={preloadImages[currentImage] && preloadImages[currentImage].src} alt={`Image ${currentImage + 1}`} />
+                <img src={preloadImages[currentImage]?.src ?? rental.pictures[currentImage]} alt={`Image ${currentImage + 1}`} />
             </div>
             <ul className="circles">
                 {rental.pictures.map((_, index) => (

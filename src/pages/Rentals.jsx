@@ -24,6 +24,8 @@ const Rentals = () => {
     }
 
     const hostName = rental.host.name.split(" ");
+    const hostFirstName = hostName[0] ?? "";
+    const hostLastName = hostName.slice(1).join(" ") ?? "";
 
     const tagList = rental.tags.map((tag, index) => <Tag key={index} tagName={tag} />);
 
@@ -41,8 +43,8 @@ const Rentals = () => {
                 <div className="rental__info__user">
                     <div className="rental__info__profile">
                         <div className="rental__info__profil--name">
-                            <p>{hostName[0]}</p>
-                            <p>{hostName[1]}</p>
+                            <p>{hostFirstName}</p>
+                            <p>{hostLastName}</p>
                         </div>
                         <img src={rental.host.picture} alt={rental.host.name + " portrait"} />
                     </div>
