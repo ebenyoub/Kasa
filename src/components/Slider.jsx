@@ -6,18 +6,16 @@ const Slider = ({ rental }) => {
     const [currentImage, setCurrentImage] = useState(0)
     const [preloadImages, setPreloadImages] = useState([]);
 
-    // Créer les images préchargées uniquement lors du premier rendu
     useEffect(() => {
-        const createImages = async () => {
-            const imagesBuild = rental.pictures.map(url => {
-                const newImage = new Image()
-                newImage.src = url
-                return newImage
-            })
-            setPreloadImages(imagesBuild)
-        }
-        createImages();
-    }, []);
+        const imagesBuild = rental.pictures.map((url) => {
+            const newImage = new Image()
+            newImage.src = url
+            return newImage
+        })
+
+        setPreloadImages(imagesBuild)
+        setCurrentImage(0)
+    }, [rental.pictures]);
 
     const next = () => {
         const nextIndex = currentImage < rental.pictures.length - 1 ? currentImage + 1 : 0;
@@ -31,10 +29,14 @@ const Slider = ({ rental }) => {
 
     return (
         <div className="slider">
-            <img className="slider__btn slider__btn__left" src={chevron} alt="Bouton précédent" onClick={before} />
-            <img className="slider__btn slider__btn__right" src={chevron} alt="Bouton suivant" onClick={next} />
+            <button type="button" className="slider__btn slider__btn__left" onClick={before} aria-label="Image précédente">
+                <img src={chevron} alt="" aria-hidden="true" />
+            </button>
+            <button type="button" className="slider__btn slider__btn__right" onClick={next} aria-label="Image suivante">
+                <img src={chevron} alt="" aria-hidden="true" />
+            </button>
             <div className="img_container">
-                <img src={preloadImages[currentImage] && preloadImages[currentImage].src} alt={`Image ${currentImage}`} />
+                <img src={preloadImages[currentImage] && preloadImages[currentImage].src} alt={`Image ${currentImage + 1}`} />
             </div>
             <ul className="circles">
                 {rental.pictures.map((_, index) => (
